@@ -1,5 +1,7 @@
 import { ProductButtons, ProductCard, ProductImage, ProductTitle } from '../components';
 
+import '../styles/custom-style.css'
+
 const product = {
     id: '1',
     title: 'Coffee Mug',
@@ -17,17 +19,50 @@ export const ShoppingPage = () => {
                 flexDirection: 'row',
                 flexWrap: 'wrap',
             }}>
-                <ProductCard product={product}>
-                    <ProductCard.Image />
-                    <ProductCard.Title title='Oaxaca' />
-                    <ProductCard.Buttons />
+                <ProductCard
+                    product={product}
+                    className="bg-dark"
+                >
+                    <ProductCard.Image className="custom-image" />
+                    <ProductCard.Title className="text-white text-bold" />
+                    <ProductCard.Buttons className="custom-buttons" />
                 </ProductCard>
 
-                <ProductCard product={product}>
-                    <ProductImage />
-                    <ProductTitle />
-                    <ProductButtons />
+                <ProductCard
+                    product={product}
+                    className="bg-dark"
+                >
+                    <ProductImage className="custom-image" />
+                    <ProductTitle className="text-white text-bold" />
+                    <ProductButtons className="custom-buttons" />
                 </ProductCard>
+
+                <ProductCard
+                    product={product}
+                    style={{
+                        backgroundColor: '#333',
+                        color: 'white'
+                    }}
+                >
+                    <ProductImage
+                        style={{
+                            borderRadius: '30px',
+                        }}
+                    />
+                    <ProductTitle
+                        style={{
+                            fontWeight: 'bold'
+                        }}
+                    />
+                    <ProductButtons
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            color: 'white',
+                        }}
+                    />
+                </ProductCard>
+
             </div>
         </div>
     )
